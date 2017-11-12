@@ -1,0 +1,15 @@
+{
+  "name" : "audio-decoder",
+  "url" : "https://github.com/notessimo/audio-decoder",
+  "tags": ["audio", "cross", "decoder", "ogg", "mp3", "wav"],
+  "license" : "MIT",
+  "description" : "Cross-platform audio decoder",
+  "version" : "1.0.0",
+  "classPath": "src/",
+  "releasenote" : "Initial Release",
+  "contributors" : ["starburst997"],
+  "dependencies" : {
+    "fs-utils": "",
+    "tink_core": ""
+  }
+}
