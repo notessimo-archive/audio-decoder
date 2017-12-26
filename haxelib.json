@@ -9,7 +9,8 @@
   "releasenote" : "Initial Release",
   "contributors" : ["starburst997"],
   "dependencies" : {
-    "fs-utils": "",
-    "tink_core": ""
+    "stb_ogg_sound": "",
+    "browser-detect": "",
+    "format": ""
   }
 }

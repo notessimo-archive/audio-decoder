@@ -7,3 +7,5 @@ In HTML5 target it will utilize the AudioContext to decode (unless it's called f
 WAV is always decoded from haxe.
 
 MP3 is still a WIP, OGG / WAV should work.
+
+More love coming to this library eventually...
