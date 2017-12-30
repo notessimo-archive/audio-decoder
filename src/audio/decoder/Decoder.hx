@@ -21,6 +21,10 @@ import js.html.audio.AudioContext;
 import js.html.audio.OfflineAudioContext;
 #end
 
+#if tink_await
+using tink.CoreApi;
+#end
+
 // Chunk
 private typedef Chunk =
 {
@@ -85,6 +89,7 @@ private class ArrayOutput extends Output
  * TODO: Once all relevant bytes are decoded, have a "clean" function called 
  * to clear unused bytes, decoder stuff, etc. since it is "completely" decoded...
  */
+#if tink_await @await #end
 class Decoder
 {
   // WebAudio
@@ -402,7 +407,11 @@ class Decoder
   }
 
   // Decode all the samples, in one shot
+  #if tink_await
+  public function decodeAll()
+  #else
   public function decodeAll(handler:Void->Void = null)
+  #end
   {
     // We now have one big decoded chunk
     chunks =
@@ -415,7 +424,11 @@ class Decoder
     };
 
     // Read in one shot
+    #if tink_await
+    return Future.async((cb) -> readAll(() -> cb(Noise)));
+    #else
     readAll( handler );
+    #end
   }
 
   // Decode remaining
